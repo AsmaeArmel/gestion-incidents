@@ -1,0 +1,20 @@
+Pipeline{
+   agent any
+   stages{
+      stages('compile'){
+         steps{
+            mvn compile
+          }
+      }
+      stages('test'){
+          steps{
+            mvn clean test
+            }
+      }
+      stages('package'){
+           steps{
+             mvn package
+             }
+        }
+   }
+}
